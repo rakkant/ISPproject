@@ -1,11 +1,17 @@
 var GameLayer = cc.LayerColor.extend({
 	init: function(){
-		this._super();
 		
+		this.background = new background();
+		this.addChild(this.background);
+		this.background.setPosition (new cc.Point (screenWidth /2, screenHeight / 2));
+		this.pillow = new pillow();
+		this.addChild(this.pillow);
 		this.player = new Player();
 		this.player.setPosition (new cc.Point (screenWidth /2, screenHeight / 5));
 		this.addChild(this.player);
         this.addKeyboardHandlers();
+        
+   
 		return true;
 	},
 	addKeyboardHandlers : function(){
