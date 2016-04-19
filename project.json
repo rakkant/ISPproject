@@ -14,10 +14,11 @@
     "jsList" : [
         "src/resource.js",
     	"src/GameLayer.js",
-    	 "src/background.js",
+    	 "src/Background.js",
         "src/Player.js",
-       "src/candy.js",
-       "src/hole.js",
-       "src/pillow.js"
+       "src/Candy.js",
+       "src/Hole.js",
+       "src/Pillow.js",
+       "src/Heart.js"
     ]
 }

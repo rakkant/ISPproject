@@ -4,7 +4,9 @@ var res = {
 		candy_png: 'res/images/candy.png',
 		hole_png: 'res/images/hole.png',
 		pillow_png: 'res/images/pillow1.png',
-		stary_jpg:'res/images/stary1.jpg'
+		stky1_jpg:'res/images/sky1_bg.jpg',
+		stky2_jpg:'res/images/sky2_bg.jpg',
+		heart_png:'res/images/heart.png'
 }	
 var g_resources = [];
 

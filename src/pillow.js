@@ -6,9 +6,9 @@ var pillow = cc.Sprite.extend({
  
     randomPosition: function() {
         var x, y;
-        x = Math.floor((Math.random() * 800) + 5)
+        x = Math.ceil((Math.random())*600 + 5)
         console.dir(x);
-        y = Math.floor((Math.random() * 600) + 5)
+        y = Math.ceil((Math.random())*800+ 5)
         console.dir(y);
         return this.setPosition( new cc.Point( x, y ) );
          
