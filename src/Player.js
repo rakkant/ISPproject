@@ -2,29 +2,46 @@ var Player = cc.Sprite.extend({
 	ctor: function(){
 		this._super();
 		this.initWithFile('res/images/sloth.png');
-		this.vy = 15;
-		
+		this.speed = 15;
+
 		this.started = false;
 	},
 	update: function (dt){
-		var pos = this.getPosition();
-		switch (this.direction){
-		case 1:
-			this.direction = Player.DIR.UP;
-			this.vy += -1;
-		case 2:
-			this.direction = Player.DIR.DOWN;
-			this.vy -= 1;
-		}
-		
+//		var pos = this.getPosition();
+//		switch (this.direction){
+//		case 1:
+//		this.direction = Player.DIR.UP;
+
+//		this.setPosition( new cc.Point(pos.x ,pox.y + this.vy ));
+//		case 2:
+//		this.direction = Player.DIR.DOWN;
+//		this.setPosition( new cc.Point(pos.x ,pox.y - this.vy ));
+
+//		}
+
 	},
-    start: function() {
-       this.started = true;
-   },
-    stop: function(){
-        this.started = false;
-    }
-	
+	moveUp : function (){
+		var pos = this.getPosition();
+		if (pos.y < 470 ){
+			this.setPosition( new cc.Point ( pos.x , pos.y + this.speed +1));
+		}
+	},
+	moveDown : function (){
+		var pos = this.getPosition();
+		if (pos.y > 90 ){
+		this.setPosition( new cc.Point ( pos.x , pos.y - this.speed ));
+		}
+	},
+	start: function() {
+		this.started = true;
+	},
+	stop: function(){
+		this.started = false;
+	},
+	slowDown : function(){
+		this.speed -= 1;
+	}
+
 });
 
 Player.DIR = {

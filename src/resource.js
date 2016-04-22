@@ -6,7 +6,9 @@ var res = {
 		pillow_png: 'res/images/pillow1.png',
 		stky1_jpg:'res/images/sky1_bg.jpg',
 		stky2_jpg:'res/images/sky2_bg.jpg',
-		heart_png:'res/images/heart.png'
+		heart_png:'res/images/heart.png',
+		bgSound_mp3:'res/sound/Helicopter.mp3'
+			
 }	
 var g_resources = [];
 
