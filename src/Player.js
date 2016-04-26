@@ -2,40 +2,39 @@ var Player = cc.Sprite.extend({
 	ctor: function(){
 		this._super();
 		this.initWithFile('res/images/sloth.png');
-		this.speed = 15;
-
+		this.speed = 2;
+		this.checkUp = false;
+		this.checkDown = false;
 		this.started = false;
+
 	},
-	update: function (dt){
-//		var pos = this.getPosition();
-//		switch (this.direction){
-//		case 1:
-//		this.direction = Player.DIR.UP;
-
-//		this.setPosition( new cc.Point(pos.x ,pox.y + this.vy ));
-//		case 2:
-//		this.direction = Player.DIR.DOWN;
-//		this.setPosition( new cc.Point(pos.x ,pox.y - this.vy ));
-
-//		}
-
+	update : function (){
+		if (this.checkUp ){
+			this.moveUp();
+		}else if (this.checkDown){
+			this.moveDown();
+		}
 	},
 	moveUp : function (){
 		var pos = this.getPosition();
+		this.checkUp = true;
+		this.checkDown = false;
 		if (pos.y < 470 ){
-			this.setPosition( new cc.Point ( pos.x , pos.y + this.speed +1));
+			this.setPosition( new cc.Point ( pos.x , pos.y + this.speed +1));	
 		}
 	},
 	moveDown : function (){
 		var pos = this.getPosition();
-		if (pos.y > 90 ){
-		this.setPosition( new cc.Point ( pos.x , pos.y - this.speed ));
+		this.checkDown = true;
+		this.checkUp = false;
+		if (pos.y > 90  ){
+		this.setPosition( new cc.Point ( pos.x , pos.y - this.speed -1));
 		}
 	},
 	start: function() {
 		this.started = true;
 	},
-	stop: function(){
+	die: function(){
 		this.started = false;
 	},
 	slowDown : function(){
@@ -47,6 +46,4 @@ var Player = cc.Sprite.extend({
 Player.DIR = {
 		UP: 1,
 		DOWN: 2,
-},
-Player.G = -1;
-Player.STARTING_VELOCITY = 15;
+}
