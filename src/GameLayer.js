@@ -8,7 +8,7 @@ var GameLayer = cc.LayerColor.extend({
 		this.addChild(this.background);
 		this.background.setPosition (new cc.Point (screenWidth /2, screenHeight / 2));
 		this.background.scheduleUpdate();
-		 
+
 
 		this.pillow = new pillow();
 		this.pillow.setPosition (new cc.Point (10, screenHeight / 2));
@@ -37,11 +37,12 @@ var GameLayer = cc.LayerColor.extend({
 		this.scoreLabel.setPosition( new cc.Point( 180, 495 ) );
 		this.addChild( this.scoreLabel );
 
-//		this.time = new Timer(60);
-//		this.time.setPosition(350,400);
-//		this.addChild(this.time);
-//		this.time.scheduleUpdate();
-
+		this.timeCountdown =  60;
+		this.timeLabel = cc.LabelTTF.create( this.timeCountdown,  'Arial', 27);
+		this.timeLabel.setAnchorPoint(0,0);
+		this.timeLabel.setPosition(new cc.Point (630, 500))
+		this.addChild(this.timeLabel);
+		this.schedule(this.countdown,1);
 
 
 		this.life = 10;
@@ -94,21 +95,31 @@ var GameLayer = cc.LayerColor.extend({
 			this.pillow.setPosition(new cc.Point (10, Math.random()*450)) ;
 			this.life -=1;
 			this.player.speed -= 0.05;
+			this.timeCountdown -=2;
+			this.timeLabel.setString(this.timeCountdown);
 			this.lifeLabel.setString(parseInt(this.life));
 			if (this.life == 0){
 				this.removeAllChildren();
 				cc.director.runScene(new EndScene());
 			}
 //			if (this.time.isGameOver()) {
-//				this.removeAllChildren();
-//				cc.director.runScene(new EndScene());
+//			this.removeAllChildren();
+//			cc.director.runScene(new EndScene());
 //			}
 		}
 	},
 	startGame: function() {
 		this.player.start();
+	},
+	
+	countdown: function(){
+		this.timeCountdown--;
+		this.timeLabel.setString(this.timeCountdown);
+		if(this.timeCountdown == 0){
+			this.removeAllChildren();
+			cc.director.runScene(new EndScene());
+		}
 	}
-
 
 });
 
