@@ -28,7 +28,7 @@ var Player = cc.Sprite.extend({
 		this.checkDown = true;
 		this.checkUp = false;
 		if (pos.y > 90  ){
-		this.setPosition( new cc.Point ( pos.x , pos.y - this.speed -1));
+			this.setPosition( new cc.Point ( pos.x , pos.y - this.speed -1));
 		}
 	},
 	start: function() {
@@ -38,7 +38,7 @@ var Player = cc.Sprite.extend({
 		this.started = false;
 	},
 	slowDown : function(){
-		this.speed -= 1;
+		this.speed -= 0.05;
 	}
 
 });

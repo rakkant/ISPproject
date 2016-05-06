@@ -13,12 +13,17 @@
 
     "jsList" : [
         "src/resource.js",
+        "src/StartPage.js",
+        "src/RunGame.js",
+        "src/Instruction.js",
     	"src/GameLayer.js",
     	 "src/Background.js",
         "src/Player.js",
        "src/Candy.js",
        "src/Hole.js",
        "src/Pillow.js",
-       "src/Heart.js"
+       "src/Heart.js",
+       "src/EndGame.js",
+       "src/Timer.js"
     ]
 }

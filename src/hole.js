@@ -12,14 +12,14 @@ var Hole= cc.Sprite.extend({
 	settingPos: function(){
 		var pos = this.getPosition();  
 		if( pos.x > 800 ){
-			this.setPosition( new cc.Point( 0,  Math.random()*600));  
+			this.setPosition( new cc.Point( 0,  Math.random()*450 ));  
 		}
 	},
 	closeTo: function( obj ) {
 		var myPos = this.getPosition();
 		var oPos = obj.getPosition();
-	  	return ( ( Math.abs( myPos.x - oPos.x ) <= 100 ) &&
-			 ( Math.abs( myPos.y - oPos.y ) <= 60 ) );
+	  	return ( ( Math.abs( myPos.x - oPos.x ) <= 40 ) &&
+			 ( Math.abs( myPos.y - oPos.y ) <= 40 ) );
 	  	
 	    }
 

@@ -9,7 +9,14 @@ var res = {
 		heart_png:'res/images/heart.png',
 		bgSound_mp3:'res/sound/Helicopter.mp3',
 		end1_jpg: 'res/images/end1.jpg',
-		end2_jpg:'res/images/end2.jpg'
+		end2_jpg:'res/images/end2.jpg',
+		instruction1_jpg:'res/images/instruction1.jpg',
+		instruction2_jpg:'res/images/instruction2.jpg',
+		start1_jpg:'res/images/start1.jpg',
+		start2_jpg:'res/images/start2.jpg',
+		play1_png:'res/images/play1.png',
+		play2_png:'res/images/play2.png'
+	
 			
 }	
 var g_resources = [];
