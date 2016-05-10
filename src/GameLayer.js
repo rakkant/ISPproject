@@ -37,7 +37,7 @@ var GameLayer = cc.LayerColor.extend({
 		this.scoreLabel.setPosition( new cc.Point( 180, 495 ) );
 		this.addChild( this.scoreLabel );
 
-		this.timeCountdown =  120;
+		this.timeCountdown =  90;
 		this.timeLabel = cc.LabelTTF.create( this.timeCountdown,  'Arial', 27);
 		this.timeLabel.setAnchorPoint(0,0);
 		this.timeLabel.setPosition(new cc.Point (630, 500))
@@ -85,6 +85,10 @@ var GameLayer = cc.LayerColor.extend({
 		if (this.candy.closeTo (this.player)){
 			score += 1;
 			this.scoreLabel.setString(parseInt(score)) ;
+			if (score%10 == 0){
+				this.life ++;
+				this.lifeLabel.setString(parseInt(this.life));
+			}
 			this.candy.setPosition(new cc.Point (10, Math.random()*450)) ;
 
 		}

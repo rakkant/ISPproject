@@ -13,7 +13,7 @@ var pillow = cc.Sprite.extend({
 	settingPos: function(){
 		var pos = this.getPosition();  
 		if( pos.x > 800 ){			
-				this.setPosition( new cc.Point( 0,  Math.random()*400));  
+				this.setPosition( new cc.Point( 0,  500-(Math.random()*600)+50));  
 		}
 	},
 	closeTo: function( obj ) {
