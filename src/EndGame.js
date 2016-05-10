@@ -17,7 +17,6 @@ var EndGame = cc.Sprite.extend({
 		
 		this.addKeyboardHandlers();
 		cc.audioEngine.playMusic("res/sound/animals.mp3", true);
-		//cc.audioEngine.playMusic("res/sound/Helicopter.mp3", false);
 	},
 
 	addKeyboardHandlers : function(){
@@ -36,7 +35,6 @@ var EndGame = cc.Sprite.extend({
 	onKeyDown: function (keyCode, event){
 		if (keyCode == 82){
 			cc.director.runScene( new StartScene());
-			
 		}
 
 	}
